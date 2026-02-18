@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Раздел 1: z-index и clamp() -->
+    <section>
+        <h2>1. Демонстрация z-index и clamp()</h2>
+        <div class="code-note">
+            <strong>z-index</strong> управляет наложением позиционированных элементов. Чем больше значение, тем выше слой.<br>
+            <strong>clamp(min, предпочтительное, max)</strong> — функция, которая ограничивает значение между минимумом и максимумом. Здесь используется для размера шрифта.
+        </div>
+        <div class="zindex-demo">
+            <div class="z-box z1">z-index: 1 (красный)</div>
+            <div class="z-box z2">z-index: 3 (зеленый) — выше всех</div>
+            <div class="z-box z3">z-index: 2 (синий)</div>
+        </div>
+        <div class="clamp-text">
+            Этот текст использует <code>font-size: clamp(1rem, 4vw, 2rem)</code>. Попробуйте изменить ширину окна — размер будет плавно меняться от 1rem до 2rem в зависимости от 4vw.
+        </div>
+    </section>
+    <!-- Раздел 2: Четыре типа position (с оформлением из п.7.1) -->
+    <section>
+        <h2>2. Свойства position на четырёх блоках</h2>
+        <div class="code-note">
+            Каждый блок имеет <strong>padding, margin, border, border-radius, box-shadow, overflow</strong> (из раздела 7.1).<br>
+            • <strong>static</strong> — значение по умолчанию, смещения не работают.<br>
+            • <strong>relative</strong> — смещается относительно своего обычного места.<br>
+            • <strong>absolute</strong> — вырывается из потока, позиционируется относительно ближайшего позиционированного предка (здесь — контейнер .position-demo).<br>
+• <strong>fixed</strong> — прикреплён к окну браузера (правый нижний угол).
+        </div>
+        <div class="position-demo">
+            <!-- static (по умолчанию) -->
+            <div class="block pos-block" style="position: static;">
+                <strong>static (по умолчанию)</strong><br>
+                top/left не действуют. Обычный блок в потоке.
+            </div>
+            <!-- relative -->
+            <div class="block pos-block" style="position: relative; top: 15px; left: 10px; background: #f9e79f;">
+                <strong>relative</strong><br>
+                Сдвинут на 15px вниз и 10px вправо от своего исходного места.
+            </div>
+            <!-- absolute -->
+            <div class="block pos-block" style="position: absolute; top: 40px; right: 10px; background: #d4e6f1; width: 200px;">
+                <strong>absolute</strong><br>
+                Позиционируется относительно родительского контейнера (.position-demo). top:40px, right:10px.
+            </div>
+            <!-- fixed — вынесен за пределы контейнера, чтобы не ломал вёрстку, но разместим отдельно -->
+            
+        </div>
+        <!-- fixed блок расположим ниже, чтобы он был в рамках окна, но не внутри серого контейнера -->
+        <div class="block fixed-example">
+            <strong>fixed</strong><br>
+            Прикреплён к окну: bottom:20px, right:20px. Не двигается при прокрутке.
+        </div>
+    </section>
+
+    <!-- Раздел 3: Гибкая сетка на Flexbox -->
+    <section>
+        <h2>3. Flexbox — гибкая сетка</h2>
+        <div class="code-note">
+            <strong>Flexbox</strong> позволяет легко управлять распределением элементов. Родителю задаём <code>display: flex</code>. 
+            Использованы свойства: <code>justify-content: space-around</code>, <code>align-items: center</code>, <code>flex-wrap: wrap</code>.<br>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item special">2 (особый)</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">6</div>
+        </div>
+    </section>
+
+    <!-- Раздел 4: Grid — контейнер и элементы -->
+    <section>
+        <h2>4. Grid Layout — контейнер и элементы</h2>
+        <div class="code-note">
+            <strong>Grid-контейнер:</strong> <code>display: grid</code>.<br>
+            Свойства контейнера: <code>grid-template-columns: repeat(3, 1fr);</code> (три равные колонки), <code>grid-template-rows: auto auto;</code>, <code>gap: 15px;</code>.<br>
+            Свойства элементов: <code>grid-column: span 2;</code> (широкий элемент), <code>grid-row: span 2;</code> (высокий элемент). Также показана явная сетка.
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item wide">2 (grid-column: span 2)</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item tall">4 (grid-row: span 2)</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+        </div>
+        <p>Элемент 2 занимает две колонки, элемент 4 — две строки. Остальные располагаются автоматически.</p>
+    </section>
+
+    <!-- Дополнительный блок, демонстрирующий overflow (упомянуто в теории) -->
+<section>
+        <h2>Overflow</h2>
+        <div class="code-note">
+            Свойство <code>overflow: auto</code> создаёт полосы прокрутки при необходимости. В блоке справа текста больше, чем его высота.
+        </div>
+        <div class="overflow-demo">
+            <p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст </p>
+        </div>
+    </section>
+
+</body>
+</html>
