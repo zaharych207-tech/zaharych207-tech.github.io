@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №2 - CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .internal-style {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .internal-title {
+            color: #2c3e50;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- Раздел 1: Внешние стили + @import -->
+            <h2>1. Внешняя таблица стилей + @import</h2>
+            <p>Этот блок стилизован через внешний CSS-файл (styles.css), 
+               который использует @import для подключения дополнительных стилей.</p>
+            <div class="import-demo">
+                <p>Этот элемент использует стили, импортированные через @import</p>
+            </div>
+
+        <!-- Раздел 2: Внутренние стили -->
+            <h2 class="internal-title">2. Внутренние стили</h2>
+            <p>Этот блок стилизован с помощью внутренних стилей в теге &lt;style&gt;.</p>
+            <ul>
+                <li>Стили определены в разделе head</li>
+                <li>Действуют только на эту страницу</li>
+                <li>Имеют более высокий приоритет, чем внешние</li>
+            </ul>
+
+        <!-- Раздел 3: Встроенные стили -->
+            <h2>3. Встроенные стили (inline)</h2>
+            <p style="background-color: #fff3cd; padding: 12px; border-left: 4px solid #ffc107; color: #856404;">
+                Этот абзац использует встроенные стили через атрибут style.
+            </p>
+            <div style="margin: 15px 0; padding: 10px; border: 2px dashed ; text-align: center;">
+                <span style="font-weight: bold;">Div с встроенными стилями:</span>
+                Имеют наивысший приоритет
+            </div>
+
+        <!-- Раздел 4: Псевдоклассы и псевдоэлементы -->
+            <h2>4. Псевдоклассы и псевдоэлементы</h2>
+            
+            <div class="pseudoclasses">
+                <h3>Псевдоклассы:</h3>
+                <a href="#hover-demo" class="hover-link">Наведи курсор на меня (:hover)</a><br><br>
+                <a href="#visited-demo" class="visited-link">Посещенная ссылка (:visited)</a><br><br>
+                <input type="text" class="focus-input" placeholder="Кликни сюда (:focus)">
+            </div>
+            
+            <div class="pseudoelements">
+                <h3>Псевдоэлементы:</h3>
+                <p class="first-letter">Этот абзац использует ::first-letter для стилизации первой буквы.</p>
+                <p class="before-after">Этот абзац использует ::before и ::after.</p>
+            </div>
+    </main>
+</body>
+</html>

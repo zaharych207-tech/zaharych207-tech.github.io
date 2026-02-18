@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №4: Формы</title>
+</head>
+<body>
+    <h2>Анкета участника опроса</h2>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Основные сведения</legend>
+            <p>
+                <label for="anketa_name">Фамилия, имя, отчество:</label>
+                <input type="text" id="anketa_name" name="fio" size="40">
+            </p>
+
+            <p>
+                <label for="anketa_age">Возраст:</label>
+                <input type="number" id="anketa_age" name="age" min="1" max="120" step="1">
+            </p>
+
+            <p>
+                <label for="anketa_birth">Дата рождения:</label>
+                <input type="date" id="anketa_birth" name="birthdate">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Подробности</legend>
+            <p>Ваш пол:</p>
+            <p>
+                <input type="radio" id="gender_m" name="gender" value="male">
+                <label for="gender_m">Мужской</label>
+                <br>
+                <input type="radio" id="gender_f" name="gender" value="female">
+                <label for="gender_f">Женский</label>
+                <br>
+                <input type="radio" id="gender_other" name="gender" value="other">
+                <label for="gender_other">Другой</label>
+            </p>
+            <p>
+                <label for="hobbies">Ваши увлечения :</label><br>
+                <select id="hobbies" name="hobbies[]" multiple size="4">
+                    <option value="sport">Спорт</option>
+                    <option value="music">Музыка</option>
+                    <option value="books">Книги</option>
+                    <option value="travel">Путешествия</option>
+                    <option value="tech">Технологии</option>
+                </select>
+           
+            <p>Какими языками программирования вы владеете?</p>
+            <p>
+                <input type="checkbox" id="lang_python" name="lang[]" value="python">
+                <label for="lang_python">Python</label>
+                <br>
+                <input type="checkbox" id="lang_js" name="lang[]" value="javascript">
+                <label for="lang_js">JavaScript</label>
+                <br>
+                <input type="checkbox" id="lang_java" name="lang[]" value="java">
+                <label for="lang_java">Java</label>
+                <br>
+                <input type="checkbox" id="lang_cpp" name="lang[]" value="cpp">
+                <label for="lang_cpp">C++</label>
+            </p>
+            <p>
+                <label for="anketa_about">О себе (кратко):</label><br>
+                <textarea id="anketa_about" name="about" rows="3" cols="50" placeholder="Расскажите немного о себе..."></textarea>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Отправить анкету">
+            <input type="reset" value="Сбросить">
+        </p>
+    </form>
+
+    <hr>
+
+</body>
+</html>

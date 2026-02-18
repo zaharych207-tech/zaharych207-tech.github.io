@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №4: Формы</title>
+</head>
+<body>
+    <h1>Демонстрация работы с формами</h1>{\rtf1}
+    
+    <h2>Форма регистрации на сайте</h2>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Учётные данные</legend>
+            <p>
+                <label for="reg_login">Логин:</label>
+                <input type="text" id="reg_login" name="login" required>
+            </p>
+            <p>
+                <label for="reg_pass">Пароль:</label>
+                <input type="password" id="reg_pass" name="password" required>
+            </p>
+            <p>
+                <label for="reg_pass2">Подтверждение пароля:</label>
+                <input type="password" id="reg_pass2" name="password_confirm" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Личная информация</legend>
+            <p>Пол:</p>
+            <p>
+                <input type="radio" id="reg_male" name="gender" value="male">
+                <label for="reg_male">Мужской</label>
+                <br>
+                <input type="radio" id="reg_female" name="gender" value="female">
+                <label for="reg_female">Женский</label>
+            </p>
+            <p>
+                <label for="country">Страна проживания:</label>
+                <select id="country" name="country">
+                    <option value="ru">Россия</option>
+                    <option value="by">Беларусь</option>
+                    <option value="kz">Казахстан</option>
+                    <option value="other">Другая</option>
+                </select>
+            </p>
+            <p>
+                <label for="city">Город:</label>
+                <input type="text" id="city" name="city">
+            </p>
+            <p>
+                <input type="checkbox" id="reg_agree" name="agree" value="yes" checked>
+                <label for="reg_agree">Я принимаю условия пользовательского соглашения</label>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Зарегистрироваться">
+            <input type="reset" value="Очистить">
+            <input type="button" value="Проверить логин (демо)" onclick="alert('Кнопка без скрипта — демонстрация типа button')">
+        </p>
+    </form>
+    <hr>
+
+</body>
+</html>

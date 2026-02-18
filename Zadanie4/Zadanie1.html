@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №4: Формы</title>
+</head>
+<body>
+    <h2>Форма заявки на участие в конференции</h2>
+    <form action="#" method="post">
+        <input type="hidden" name="form_id" value="application">
+        <fieldset>
+            <legend>Контактные данные</legend>
+            <p>
+                <label for="app_name">Полное имя:</label>
+                <input type="text" id="app_name" name="fullname"  size="30">
+            </p>
+            <p>
+                <label for="app_email">E-mail:</label>
+                <input type="email" id="app_email" name="email"  size="30">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Выбор участия</legend>->
+            <p>Формат участия:</p>
+            <p>
+                <input type="radio" id="format_online" name="format" value="online" checked>
+                <label for="format_online">Онлайн</label>
+                <br>
+                <input type="radio" id="format_offline" name="format" value="offline">
+                <label for="format_offline">Офлайн (личное присутствие)</label>
+            </p>
+            <p>
+                <label for="section">Выберите секцию:</label>
+                <select id="section" name="section">
+                    <optgroup label="Информационные технологии">
+                        <option value="it_ai">Искусственный интеллект</option>
+                        <option value="it_web">Веб-разработка</option>
+                    </optgroup>
+                    <optgroup label="Естественные науки">
+                        <option value="bio">Биология</option>
+                        <option value="chem">Химия</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+        <p>
+            <label for="app_comment">Дополнительные пожелания:</label><br>
+            <textarea id="app_comment" name="comment" rows="4" cols="50"></textarea>
+        </p>
+        <p>
+            <input type="checkbox" id="app_consent" name="consent" value="yes" checked>
+            <label for="app_consent">Я согласен на обработку персональных данных</label>
+        </p>
+        <p>
+            <input type="submit" value="Отправить заявку">
+            <input type="reset" value="Очистить форму">
+        </p>
+    </form>
+
+    <hr>
+
+</body>
+</html>

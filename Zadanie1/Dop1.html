@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Учебный пример HTML-документа">
+    <meta name="author" content="Студент">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Пример HTML-документа</title>
+
+    <!-- Подключение внешнего CSS (пример) -->
+    <link rel="sheet" href="style.css">
+
+    <!-- Внутренние стили -->
+    <style>
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Якорь -->
+<a id="top"></a>
+
+<h1>Демонстрация возможностей HTML</h1>
+
+<!-- Бегущая строка -->
+<marquee behavior="scroll" direction="left" scrollamount="6">
+    Добро пожаловать
+</marquee>
+
+<hr>
+
+<!-- Навигация -->
+<div class="section">
+    <h2>Навигация</h2>
+
+    <ul>
+        <li><a href="#table">Таблица</a></li>
+        <li><a href="#links">Ссылки</a></li>
+        <li><a href="#about">О странице</a></li>
+    </ul>
+</div>
+
+<!-- Таблица -->
+<div class="section" id="table">
+
+    <h2>Расписание занятий</h2>
+
+    <table>
+
+        <tr>
+            <th>День недели</th>
+            <th>Время</th>
+            <th>Аудитория</th>
+            <th>Дисциплина</th>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Понедельник</td>
+            <td>8:00 – 9:20</td>
+            <td>212</td>
+            <td>Информационные технологии</td>
+        </tr>
+
+        <tr>
+            <td>9:25 – 10:45</td>
+            <td>212</td>
+            <td>Информационные технологии</td>
+        </tr>
+
+        <tr>
+            <td>11:00 – 12:20</td>
+            <td>212</td>
+            <td>Информационные технологии</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Вторник</td>
+            <td>8:00 – 9:20</td>
+            <td>212</td>
+            <td>Компьютерный практикум</td>
+        </tr>
+
+        <tr>
+            <td>9:25 – 10:45</td>
+            <td>212</td>
+            <td>Компьютерный практикум</td>
+        </tr>
+
+        <tr>
+            <td>11:00 – 12:20</td>
+            <td>212</td>
+            <td>Компьютерный практикум</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<!-- Ссылки -->
+<div class="section" id="links">
+
+    <h2>Гиперссылки</h2>
+
+    <p>
+        Внешняя ссылка:
+        <a href="https://code.mu/ru/markup/book/prime/" target="_blank">
+            Учебник по HTML
+        </a>
+    </p>
+
+    <p>
+        Ссылка наверх:
+        <a href="#top">Перейти к началу страницы</a>
+    </p>
+
+</div>
+</body>
+</html>
