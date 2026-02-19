@@ -19,45 +19,38 @@
             <div class="z-box z3">z-index: 2 (синий)</div>
         </div>
         <div class="clamp-text">
-            Этот текст использует <code>font-size: clamp(1rem, 4vw, 2rem)</code>. Попробуйте изменить ширину окна — размер будет плавно меняться от 1rem до 2rem в зависимости от 4vw.
+            Этот текст использует <code>font-size: clamp(1rem, 4vw, 2rem)</code>.
         </div>
     </section>
     <!-- Раздел 2: Четыре типа position (с оформлением из п.7.1) -->
     <section>
         <h2>2. Свойства position на четырёх блоках</h2>
         <div class="code-note">
-            Каждый блок имеет <strong>padding, margin, border, border-radius, box-shadow, overflow</strong> (из раздела 7.1).<br>
             • <strong>static</strong> — значение по умолчанию, смещения не работают.<br>
             • <strong>relative</strong> — смещается относительно своего обычного места.<br>
             • <strong>absolute</strong> — вырывается из потока, позиционируется относительно ближайшего позиционированного предка (здесь — контейнер .position-demo).<br>
 • <strong>fixed</strong> — прикреплён к окну браузера (правый нижний угол).
         </div>
         <div class="position-demo">
-            <!-- static (по умолчанию) -->
             <div class="block pos-block" style="position: static;">
                 <strong>static (по умолчанию)</strong><br>
                 top/left не действуют. Обычный блок в потоке.
             </div>
-            <!-- relative -->
             <div class="block pos-block" style="position: relative; top: 15px; left: 10px; background: #f9e79f;">
                 <strong>relative</strong><br>
                 Сдвинут на 15px вниз и 10px вправо от своего исходного места.
             </div>
-            <!-- absolute -->
             <div class="block pos-block" style="position: absolute; top: 40px; right: 10px; background: #d4e6f1; width: 200px;">
                 <strong>absolute</strong><br>
                 Позиционируется относительно родительского контейнера (.position-demo). top:40px, right:10px.
             </div>
-            <!-- fixed — вынесен за пределы контейнера, чтобы не ломал вёрстку, но разместим отдельно -->
             
         </div>
-        <!-- fixed блок расположим ниже, чтобы он был в рамках окна, но не внутри серого контейнера -->
         <div class="block fixed-example">
             <strong>fixed</strong><br>
             Прикреплён к окну: bottom:20px, right:20px. Не двигается при прокрутке.
         </div>
     </section>
-
     <!-- Раздел 3: Гибкая сетка на Flexbox -->
     <section>
         <h2>3. Flexbox — гибкая сетка</h2>
@@ -74,7 +67,6 @@
             <div class="flex-item">6</div>
         </div>
     </section>
-
     <!-- Раздел 4: Grid — контейнер и элементы -->
     <section>
         <h2>4. Grid Layout — контейнер и элементы</h2>
@@ -92,15 +84,10 @@
             <div class="grid-item">6</div>
             <div class="grid-item">7</div>
         </div>
-        <p>Элемент 2 занимает две колонки, элемент 4 — две строки. Остальные располагаются автоматически.</p>
     </section>
-
-    <!-- Дополнительный блок, демонстрирующий overflow (упомянуто в теории) -->
 <section>
         <h2>Overflow</h2>
         <div class="code-note">
-            Свойство <code>overflow: auto</code> создаёт полосы прокрутки при необходимости. В блоке справа текста больше, чем его высота.
-        </div>
         <div class="overflow-demo">
             <p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст </p>
         </div>
@@ -108,3 +95,4 @@
 
 </body>
 </html>
+
