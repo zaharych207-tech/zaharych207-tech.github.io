@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ХозМаг — семантическая вёрстка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #d0d0d0;
+            padding: 20px;
+        }
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #444;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "main aside"
+                "footer footer";
+            grid-template-columns: 3fr 1fr;
+        }
+        header {
+            grid-area: header;
+            background: #1f3a4b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+        header h1 {
+            font-size: 28px;
+        }
+        nav {
+            grid-area: nav;
+            background: #2c4e63;
+            padding: 12px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+        }
+        nav a:hover {
+            border: 1px solid white;
+        }
+        main {
+            grid-area: main;
+            background: #f5f5f5;
+            padding: 20px;
+            border-right: 1px solid #aaa;
+        }
+        main h2 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1f3a4b;
+            padding-bottom: 5px;
+        }
+        article {
+            border: 1px solid #888;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+        }
+        article h3 {
+            margin-bottom: 10px;
+        }
+        article p {
+            margin: 5px 0;
+        }
+        aside {
+            grid-area: aside;
+            background: #d9d9d9;
+            padding: 20px;
+        }
+        aside h3 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1f3a4b;
+            padding-bottom: 5px;
+        }
+        aside ul {
+            list-style: disc inside;
+            margin-bottom: 20px;
+        }
+        aside li {
+            margin-bottom: 8px;
+        }
+        .promo {
+            border: 2px solid #1f3a4b;
+            padding: 15px;
+            background: #efefef;
+        }
+        footer {
+            grid-area: footer;
+            background: #1f3a4b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #000;
+        }
+        @media screen and (max-width: 700px) {
+            .page {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+            main {
+                border-right: none;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>ХозМастер</h1>
+            <p>Магазин для дома и ремонта</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Инструменты</a></li>
+                <li><a href="#">Сантехника</a></li>
+                <li><a href="#">Электрика</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Новинки</h2>
+            <article>
+                <h3>Молоток слесарный</h3>
+                <p>Прочный молоток с деревянной ручкой.</p>
+                <p>Цена: 390 руб.</p>
+            </article>
+            <article>
+                <h3>Вантуз</h3>
+                <p>Для устранения засоров.</p>
+                <p>Цена: 250 руб.</p>
+            </article>
+            <article>
+                <h3>Удлинитель 30м</h3>
+                <p>На катушке, три розетки.</p>
+                <p>Цена: 1750 руб.</p>
+            </article>
+        </main>
+        <aside>
+            <h3>Советы</h3>
+            <ul>
+                <li>Как выбрать дрель</li>
+                <li>Замена прокладки</li>
+                <li>Чем оттереть пену</li>
+            </ul>
+            <div class="promo">
+                <p>Подарок при покупке от 2000 руб.</p>
+            </div>
+        </aside>
+        <footer>
+            <p>8-800-555-35-35 | г. Самара, ул. Заводская, 15</p>
+        </footer>
+    </div>
+</body>
+</html>

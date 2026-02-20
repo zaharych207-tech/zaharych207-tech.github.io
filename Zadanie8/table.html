@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        td, th {
+            border: 1px solid #999;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .header {
+            background: #333;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding: 15px;
+        }
+        .nav {
+            background: #444;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            background: #fff;
+        }
+        .sidebar {
+            background: #ddd;
+            width: 200px;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        @media screen and (max-width: 600px) {
+            body { padding: 5px; }
+            table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="3" class="header">Хозяйственный магазин</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="nav">
+                <a href="#">Главная</a>
+                <a href="#">Инструменты</a>
+                <a href="#">Сантехника</a>
+                <a href="#">Электрика</a>
+                <a href="#">Контакты</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="content">
+                <h2>Товары</h2>
+                <ul>
+                    <li>Молоток — 350 руб.</li>
+                    <li>Отвертка — 120 руб.</li>
+                    <li>Набор ключей — 890 руб.</li>
+                    <li>Лампа светодиодная — 210 руб.</li>
+                    <li>Смеситель — 2450 руб.</li>
+                    <li>Удлинитель — 640 руб.</li>
+                </ul>
+            </td>
+            <td class="sidebar">
+                <h3>Акции</h3>
+                <p>Скидка на молотки 15%</p>
+                <p>Подарок при покупке смесителя</p>
+                <h3>Часы работы</h3>
+                <p>Пн-Пт: 9-20<br>Сб-Вс: 10-18</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="footer">
+                Адрес: ул. Строителей, 7 | Телефон: 123-45-67
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
