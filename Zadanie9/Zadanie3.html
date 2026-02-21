@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация 3</title>
+    <style>
+        #cage {
+        width: 400px;
+        height: 400px;
+        border: 2px black solid;
+        position: relative;
+        left: 100px;
+        top: 200px;
+    }
+
+    #square {
+        width: 75px;
+        height: 75px;
+        background: black;
+        position: relative;
+        top: 162.5px;
+        animation: moving 3s infinite linear;
+    }
+    @keyframes attention {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.25);
+        }
+    }
+
+    @keyframes moving {
+        from, to {
+            transform: translate(0, 0);
+            background: black;
+        }
+
+        24.99% {
+            background: black;
+        }
+
+        25% {
+            transform: translate(162.5px, -162.5px);
+            background: blue;
+        }
+
+        49.99% {
+            background: blue;
+        }
+
+        50% {
+            transform: translate(325px, 0);
+            background: green;
+        }
+
+        74.99% {
+            background: green;
+        }
+
+        75% {
+            transform: translate(162.5px, 162.5px);
+            background: rgb(128, 0, 0);
+        }
+
+        99.99% {
+            background: rgb(128, 0, 0);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="cage">
+        <div id="square"></div>
+    </div>
+</body>
+</html>

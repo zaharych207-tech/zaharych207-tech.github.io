@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация 2</title>
+    <style>
+    .item {
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        position: relative;
+        left: 400px;
+        top: 300px;
+    }
+    .a {
+        background: rgb(59, 124, 59);
+        animation: rotate 3s infinite alternate linear;
+    }
+    .b {
+        background: blue;
+        animation: scale 2s infinite alternate;
+    }
+    .c {
+        background: purple;
+        animation: skew 1s infinite alternate linear;
+    }
+    .d {
+        background: black;
+        animation: move 2s infinite linear;
+    }
+    .e {
+        margin-left: 250px;
+        background: yellow;
+        transition: background 0.3s ease-in-out;
+        animation: attention 1.5s linear infinite alternate;
+    }
+
+    .e:hover {
+        background: red;
+    }
+    @keyframes rotate {
+        from {
+            transform: translateX(0px) rotate(0deg);
+        }
+        to {
+            transform: translateX(-300px) rotate(-360deg);
+        }
+    }
+
+    @keyframes scale {
+        from {
+           transform: scale(1);
+        }
+        to {
+            transform: scale(0);
+        }
+    }
+
+    @keyframes skew {
+        from {
+            transform: skew(30deg, 0);
+        }
+
+        to {
+            transform: skew(-30deg, 0);
+        }
+    }
+
+    @keyframes move {
+        from {
+            transform: translate(0, 0);
+        }
+        
+        25% {
+            transform: translate(100px, 0);
+        }
+
+        50% {
+            transform: translate(100px, -100px);
+        }
+
+        75% {
+            transform: translate(0, -100px);
+        }
+
+
+        to {
+            transform: translate(0, 0);
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="item a"></div>
+        <div class="item b"></div>
+        <div class="item c"></div>
+        <div class="item d"></div>
+        <div class="item e"></div>
+    </div>
+</body>
+</html>
