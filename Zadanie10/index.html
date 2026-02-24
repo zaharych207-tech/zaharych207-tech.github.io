@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб. 10 (упрощённо)</title>
+    <style>
+        /* Базовые сбросы и простота */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: sans-serif; padding: 20px; background: #fff; }
+
+        /* Навигация с выпадающим списком */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            background: #eee;
+            padding: 10px;
+        }
+        nav a { text-decoration: none; color: black; padding: 5px 10px; display: block; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #ddd;
+            list-style: none;
+            min-width: 120px;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown > a::after { content: " ▼"; font-size: 0.8em; }
+
+        /*Выезжающая боковая панель */
+        #sidebar-toggle { display: none; }
+        .burger {
+            display: inline-block;
+            background: #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .sidebar-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            visibility: hidden;
+            z-index: 999;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0; left: -250px;
+            width: 250px; height: 100%;
+            background: #f4f4f4;
+            padding: 20px;
+            transition: left 0.3s;
+            z-index: 1000; 
+        }
+        .sidebar ul { list-style: none; margin-top: 20px; }
+        .sidebar li { margin-bottom: 10px; }
+        .close { font-size: 2em; cursor: pointer; }
+
+        #sidebar-toggle:checked ~ .sidebar-overlay { visibility: visible; }
+        #sidebar-toggle:checked ~ .sidebar { left: 0; }
+
+        /* Слайдер */
+        .slider-box {
+            max-width: 600px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s;
+        }
+        .slide {
+            min-width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+        .s1 { background: red; }
+        .s2 { background: green; }
+        .s3 { background: blue; }
+        .s4 { background: purple; }
+
+        .dots { text-align: center; margin-top: 5px; }
+        .dot {
+            display: inline-block;
+            width: 12px; height: 12px;
+            background: #aaa;
+            border-radius: 50%;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active { background: #333; }
+
+        hr { margin: 30px 0; }
+    </style>
+</head>
+<body>
+<!-- Навигационная панель с выпадающим списком -->
+<h2>Навигация с выпадающим списком</h2>
+<nav>
+    <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li class="dropdown">
+            <a href="#">Услуги</a>
+            <ul class="dropdown-content">
+                <li><a href="#">Веб</a></li>
+                <li><a href="#">Дизайн</a></li>
+                <li><a href="#">SEO</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+</nav>
+
+<hr>
+<!-- Выезжающая боковая панель -->
+<h2>Выезжающая боковая панель</h2>
+<input type="checkbox" id="sidebar-toggle">
+<label for="sidebar-toggle" class="burger">☰ Открыть</label>
+<label for="sidebar-toggle" class="sidebar-overlay"></label>
+<aside class="sidebar">
+    <label for="sidebar-toggle" class="close">✕</label>
+    <h3>Меню</h3>
+    <ul>
+        <li><a href="#">Профиль</a></li>
+        <li><a href="#">Настройки</a></li>
+        <li><a href="#">Выйти</a></li>
+    </ul>
+</aside>
+
+<hr>
+<!-- Слайдер с анимацией -->
+<h2>Слайдер с автосменой</h2>
+<div class="slider-box">
+    <div class="slider" id="slider">
+        <div class="slide s1">1</div>
+        <div class="slide s2">2</div>
+        <div class="slide s3">3</div>
+        <div class="slide s4">4</div>
+    </div>
+</div>
+<div class="dots" id="dots">
+    <span class="dot active" onclick="goTo(1)"></span>
+    <span class="dot" onclick="goTo(2)"></span>
+    <span class="dot" onclick="goTo(3)"></span>
+    <span class="dot" onclick="goTo(4)"></span>
+</div>
+<script>
+    let current = 1;
+    const slider = document.getElementById('slider');
+    const dots = document.querySelectorAll('.dot');
+    let timer;
+
+    function showSlide(n) {
+        if (n < 1) n = 4;
+        else if (n > 4) n = 1;
+        current = n;
+        slider.style.transform = `translateX(-${(current-1)*100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current-1));
+    }
+
+    function next() { showSlide(current + 1); }
+
+    function goTo(n) {
+        clearInterval(timer);
+        showSlide(n);
+        timer = setInterval(next, 3000);
+    }
+    timer = setInterval(next, 3000);
+    window.goTo = goTo; // для вызова из onclick
+</script>
+<hr>
+</body>
+</html>
