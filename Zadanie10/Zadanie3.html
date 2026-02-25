@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель</title>
+
+    <style>
+        nav {
+            width: 300px;
+        }
+
+        #button {
+            font-size: 40px;
+            padding-left: 20px;
+            margin: 0;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+            background-color: #7a7a7a;
+            width: 300px;
+            display: none; 
+        }
+
+        nav:hover .menu {
+            display: block;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu li:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 24px;
+            color: white;
+            background-color: #8c8c8c;
+            padding-left: 20px;
+            align-items: center;
+            height: 100px;
+            display: flex;
+            transition: background-color 250ms;
+        }
+        
+        .menu a:hover {
+            background-color: #afaeae;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <p id="button">Меню ></p>
+        <ul class="menu">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Цены</a></li>
+            <li><a href="#">Заказать</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

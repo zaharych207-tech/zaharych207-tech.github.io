@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+
+    <style>
+        .menu, .submenu {
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-family: sans-serif;
+            color: black;
+            display: inline-block;
+            padding: 10px;
+            width: 115px;
+            text-align: center;
+            background-color: #F4F4F4;
+            border: 1px solid #A9A9A9;
+            transition: background-color 250ms;
+        }
+
+        .menu li {
+            float: left;
+            position: relative;
+        }
+
+        .menu a:hover {
+            background-color: #858585;
+            color: white;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+        }
+
+        .submenu li {
+            float: none;
+        }
+
+        .submenu a {
+            border-top: none;
+        }
+
+        .menu li:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="">Главная</a></li>
+            <li>
+                <a href="">Цены</a>
+                <ul class="submenu">
+                    <li><a href="">Тариф 1</a></li>
+                    <li><a href="">Тариф 2</a></li>
+                    <li><a href="">Оптом</a></li>
+                </ul>
+            </li>
+            <li><a href="">Заказать</a></li>
+            <li>
+                <a href="">Отзывы</a>
+                <ul class="submenu">
+                    <li><a href="">Клиенты</a></li>
+                    <li><a href="">Партнеры</a></li>
+                </ul>
+            </li>
+            <li><a href="">О нас</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
