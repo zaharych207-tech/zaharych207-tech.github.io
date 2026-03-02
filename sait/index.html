@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RamziAi - Добро пожаловать</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .welcome-container {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .welcome-title {
+      font-size: 3rem;
+      color: #e67e22;
+      margin-bottom: 0.5rem;
+    }
+    .welcome-subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 3rem;
+    }
+    .nav-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .nav-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-decoration: none;
+      color: #333;
+    }
+    .nav-card:hover {
+      transform: translateY(-10px);
+    }
+    .nav-card span {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .nav-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .nav-card p {
+      color: #777;
+    }
+    .welcome-footer {
+      margin-top: 3rem;
+    }
+    .welcome-footer .btn {
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-home">
+      <!-- ТЕПЕРЬ ДОМИК ВЕДЁТ НА СТАРТОВУЮ СТРАНИЦУ (index.html) -->
+      <a href="index.html">🏠</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="recipes.html">Рецепты</a></li>  <!-- ссылка на страницу с рецептами -->
+        <li><a href="ai.html">ИИ</a></li>
+        <li><a href="support.html">Поддержка</a></li>
+        <li><a href="login.html">Вход</a></li>
+      </ul>
+    </nav>
+    <div class="profile-icon">
+      <a href="login.html">👤</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="welcome-container">
+      <h1 class="welcome-title">RamziAi</h1>
+      <p class="welcome-subtitle">Кулинарное сообщество с искусственным интеллектом</p>
+
+      <div class="nav-cards">
+        <a href="recipes.html" class="nav-card">
+          <span></span>
+          <h3>Рецепты</h3>
+          <p>Смотрите рецепты других пользователей, оценивайте и комментируйте</p>
+        </a>
+        <a href="ai.html" class="nav-card">
+          <span></span>
+          <h3>ИИ-помощник</h3>
+          <p>Попросите ИИ придумать рецепт из ваших продуктов</p>
+        </a>
+        <a href="support.html" class="nav-card">
+          <span></span>
+          <h3>Поддержка</h3>
+          <p>Сообщите о проблеме или нарушении</p>
+        </a>
+        <a href="login.html" class="nav-card">
+          <span></span>
+          <h3>Вход</h3>
+          <p>Войдите в аккаунт или зарегистрируйтесь</p>
+        </a>
+      </div>
+
+      <div class="welcome-footer">
+        <a href="login.html" class="btn">Войти</a>
+        <a href="#" class="btn" style="background: #95a5a6;">Создать аккаунт</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
